@@ -41,15 +41,17 @@ const siteContent = {
 let logo = document.getElementById("logo-img");
 logo.setAttribute('src', siteContent["nav"]["img-src"])
 
-let nav = document.querySelectorAll('nav a');
+const nav = document.querySelectorAll('nav a');
 nav.forEach((nav, i) => {
-  nav.textContent = siteContent['nav']['nav-item-'+i]
+  nav.textContent = siteContent['nav'][`nav-item-${i+1}`]
+  nav.style.color = 'green';
 })
 
-let title = document.querySelector('.cta-text h1');
+const title = document.querySelector('.cta-text h1');
 title.textContent = siteContent['cta']['h1'];
+title.style.color = 'dodgerblue'
 
-let circleImg = document.getElementById('cta-img');
+const circleImg = document.getElementById('cta-img');
 circleImg.setAttribute('src', siteContent['cta']['img-src']);
 
 const myButton = document.querySelector(".cta-text button");
@@ -82,3 +84,16 @@ contactInfo[2].textContent = siteContent['contact']['email'];
 
 const footer = document.querySelector('footer p');
 footer.textContent = siteContent['footer']['copyright'];
+
+const newNav1 = document.createElement('a');
+newNav1.textContent = "Login";
+newNav1.style.color = 'green';
+
+const newNav2 = document.createElement('a');
+newNav2.textContent = "Sign Up";
+newNav2.style.color = 'green';
+
+const navBar = document.querySelector('nav');
+navBar.appendChild(newNav2);
+navBar.prepend(newNav1);
+
