@@ -43,8 +43,9 @@ logo.setAttribute('src', siteContent["nav"]["img-src"])
 
 const nav = document.querySelectorAll('nav a');
 nav.forEach((nav, i) => {
-  nav.textContent = siteContent['nav'][`nav-item-${i+1}`]
+  nav.textContent = siteContent['nav'][`nav-item-${i+1}`];
   nav.style.color = 'green';
+  nav.style.fontWeight = 'bold';
 })
 
 const title = document.querySelector('.cta-text h1');
@@ -88,12 +89,18 @@ footer.textContent = siteContent['footer']['copyright'];
 const newNav1 = document.createElement('a');
 newNav1.textContent = "Login";
 newNav1.style.color = 'green';
+newNav1.style.fontWeight = 'bold';
 
 const newNav2 = document.createElement('a');
 newNav2.textContent = "Sign Up";
 newNav2.style.color = 'green';
+newNav2.style.fontWeight = 'bold';
 
 const navBar = document.querySelector('nav');
 navBar.appendChild(newNav2);
 navBar.prepend(newNav1);
+
+const header = document.querySelector('header')
+header.style.backgroundColor = 'lightblue';
+header.style.padding = '3%'
 
